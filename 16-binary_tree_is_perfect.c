@@ -6,7 +6,7 @@
  * @tree: Pointer to the root node of the tree to check.
  * @level: Level of the current node.
  *
- * Return: 1 if the tree is full and all nodes are at the same level, 0 otherwise.
+ * Return: 1 if the tree is full and all nodes are at the same leve
  */
 int is_full_and_same_level(const binary_tree_t *tree, int level)
 {
