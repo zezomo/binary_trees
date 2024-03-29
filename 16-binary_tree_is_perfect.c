@@ -1,20 +1,18 @@
 #include "binary_trees.h"
 
 /**
- * tree_is_perfect - function that checks if a tree is perfect or not
- * It has to have the same quantity of levels in left as right,
- * and each node has to have either 2 nodes or none.
+ * is_perfect - function that checks if a tree is perfect or not
  * @tree: tree to check
  * Return: 0 if it is not perfect, or the level of height if it is perfect
  */
-int tree_is_perfect(const binary_tree_t *tree)
+int is_perfect(const binary_tree_t *tree)
 {
 	int l = 0, r = 0;
 
 	if (tree->left && tree->right)
 	{
-		l = 1 + tree_is_perfect(tree->left);
-		r = 1 + tree_is_perfect(tree->right);
+		l = 1 + is_perfect(tree->left);
+		r = 1 + is_perfect(tree->right);
 		if (r == l)
 			return (r);
 		return (0);
@@ -39,7 +37,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	if (tree == NULL)
 		return (0);
 
-	result = tree_is_perfect(tree);
+	result = is_perfect(tree);
 	if (result > 0)
 		return (1);
 
